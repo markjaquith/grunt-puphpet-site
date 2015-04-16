@@ -1,0 +1,26 @@
+# Annoying crap
+*.sublime*
+.DS_Store
+
+# Vagrant license file
+license.lic
+
+# Vagrant's files
+.vagrant
+
+# The working web root
+/{%= domain %}
+
+# Cachegrind output
+/cachegrind.out*
+
+# SQL
+/*.sql
+
+# SSH Keys that are local
+/puphpet/files/dot/ssh/id_rsa
+/puphpet/files/dot/ssh/id_rsa.ppk
+/puphpet/files/dot/ssh/id_rsa.pub
+/puphpet/files/dot/ssh/root_id_rsa
+/puphpet/files/dot/ssh/root_id_rsa.ppk
+/puphpet/files/dot/ssh/root_id_rsa.pub

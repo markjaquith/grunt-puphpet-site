@@ -1,0 +1,18 @@
+# Adds custom Vagrant plugins
+# Install the required plugins
+def require_plugin plugin
+  puts `cd ~/ >/dev/null && vagrant plugin install #{plugin}` unless `cd ~/ && vagrant plugin list`.chomp.split("\n").select{|x| x.include? plugin}.length > 0
+end
+
+# Lazily create the working directories
+[ '{%= domain %}' ].each do |d|
+  d = File.dirname( __FILE__ ) + '/' + d
+  Dir.mkdir d unless File.directory? d
+end
+
+require_plugin 'vagrant-hostmanager'
+require_plugin 'vagrant-vbguest'
+require_plugin 'vagrant-bindfs'
+
+# Pull in custom plugins
+#require_relative 'custom-plugins/{%= shortname %}'
